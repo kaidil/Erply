@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0px;
+            }
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            [class*="col-"] {
+                float: left;
+                padding: 15px;
+            }
+
+            .col-1 {width: 12.495%;}
+            .col-2 {width: 12.495%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+            .col-13 {width: 8.33%;}
+            .col-14 {width: 16.66%;}
+
+            .header {
+                color: #1D2433BF;
+                font-family: "Lucida Sans", sans-serif;
+                font-size: 20px;
+                background-color: #E1E6EF;
+                padding-top: 6px;
+                padding-right: 24px;
+                padding-bottom: 6px;
+                padding-left: 24px;
+                height: 40px;
+            }
+            /*pagination design--------------*/
+
+            /* Tulpade disain*/
+
+            .firstcol {
+                height: 64px;
+                padding-top: 11px;
+                padding-right: 8px;
+                padding-bottom: 11px;
+                padding-left: 8px;
+                border-bottom: 1px solid #F1F3F9;
+            }
+             
+            .secondcol {
+                height: 64px;
+                padding-top: 10px;
+                padding-right: 8px;
+                padding-bottom: 10px;
+                padding-left: 8px;
+                color: #1D2433;
+                font-family: "Lucida Sans", sans-serif;
+                font-size: 14px;
+                gap: 4px;
+                border-bottom: #F1F3F9;
+            }
+
+
+
+
+            .first-row{
+                height: 43px;            
+                padding-top: 13px;
+                padding-right: 8px;
+                padding-bottom: 13px;
+                padding-left: 8px;
+                background-color: #F1F3F9;
+                color: #1D2433;
+                font-family: "Lucida Sans", sans-serif;
+                font-size: 14px;
+            }
+
+            .checkbox {
+                width: 20px;
+                height: 20px;              
+            }
+
+            .center {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            .label-shell {
+                padding-top: 4px;
+                padding-right: 8px;
+                padding-bottom: 4px;
+                padding-left: 8px;
+                margin-top: 8px;
+                font-size: 12px;
+            }
+
+            .customer-panel {
+                background-color: #F8F9FC;
+                padding-left: 0px !important;
+                padding-top: 0px !important;
+                font-family: "Lucida Sans", sans-serif;
+                font-size: 20px;
+                color: #1D2433BF;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+
+        <div class="row">
+            <div class="col-13 header">
+                    Invoices
+                </div>
+    
+            <div class="col-9" style="height: 40px; background-color: #E1E6EF;">
+            </div>
+            
+            <div class="col-14" style="height: 40px; background-color: #E1E6EF; padding: 0px;">
+                    <button style="background-color: #F1F3F9; color: #1D2433; text-align: left; border: none; font-size: 16px; height: 40px; border-radius: 5px; padding-top: 0px; padding-right: 4px; padding-bottom: 0px; padding-left: 4px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                          </svg>Export
+                
+                    </button>
+                    <button style="background-color: #5ABB7A; color: white; text-align: center; border: none; font-size: 16px; height: 40px; border-radius: 5px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                          </svg>New
+                    </button>
+                    <button style="height: 40px; border-radius: 5px; border: none; background-color: #F1F3F9;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
+                            <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
+                          </svg>
+                    </button>
+                    <button style="height: 40px; border-radius: 5px; border: none; background-color: #F1F3F9;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                          </svg>
+                    </button>
+
+            </div>
+
+            <div class="col-9" style="padding-right: 0px !important;">
+                <!--Pagination-->
+                <div class="col-12">
+                      pagination
+                </div>
+
+            
+
+                <!--ESIMENE RIDA-->
+                <div style="height: 43px; padding-top: 10px; padding-left: 8px; padding-bottom: 10px; padding-left: 8px; background-color: #F1F3F9; gap: 4px; position: relative;" class="col-1">
+                    <button style="background-color: #3D94F6; color: white; border: none; width: 20px; height: 20px; border-radius: 2px; text-align: center;" class="center">-</button>
+                    
+                </div>
+                <div class="col-2 first-row">
+                    <b>Type</b>
+                </div>
+                <div class="col-2 first-row">
+                    <b>Date</b>
+                </div>
+                <div class="col-2 first-row">
+                    <b>Customer</b>
+                </div>
+                <div class="col-2 first-row">
+                    <b>Location</b>
+                </div>
+                <div class="col-1 first-row">
+                    <b>State</b>
+                </div>
+                <div class="col-1 first-row" style="text-align: right;">
+                    <b>Total</b>
+                </div>
+                <div class="col-1 first-row">
+                    
+                </div>
+
+
+                <!--TEINE RIDA-->
+                <div style="position: relative;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px; margin: 0px;">Receipt</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="margin: 0px; padding-top: 11px;">21.10.2022</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Lydia Dias</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol">
+                    <label  class="label-shell" style="color: #3D8AF6; background-color: #E8F1FE; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #3D8AF6; background-color: #E8F1FE; font-size: 16px;"></i>
+                        IN PROGRESS
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+
+                <!--KOLMAS RIDA-->
+                <div style="position: relative;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px; margin: 0px;">Receipt</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="margin: 0px; padding-top: 5px;">21.10.2022</p>
+                    <label  class="label-shell" style="color: #E0593E; background-color: #FFEFEC; margin: 0PX;">
+                        DUE 2 DAYS AGO
+                    </label>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Livia Siphron</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol">
+                    <label  class="label-shell" style="color: #1D2433CC; background-color: #F8F9FC; text-align: center;">
+                    <i class="fa fa-circle" aria-hidden="true" style="color: #1D2433CC; background-color: #F8F9FC; font-size: 16px;"></i>
+                        PENDING
+                    </label>
+                </div>
+                <div class="col-1 secondcol">
+                    <p style="margin: 0px; padding-top: 5px; text-align: right;">4147.20 €</p>
+                    <label  class="label-shell" style="color: #E0593E; background-color: #FFEFEC; margin: 0PX; text-align: right;">
+                        UNPAID 200.29 €
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+                <!--NELJAS RIDA-->
+                <div style="position: relative;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px; margin: 0px;">Invoice-Waybill</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="margin: 0px; padding-top: 11px;">21.10.2022</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Tatiana George</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol">
+                    <label  class="label-shell" style="color: #5ABB7A; background-color: #F0FFF5; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #5ABB7A; background-color: #F0FFF5; font-size: 16px;"></i>
+                        SUCCESS
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+                <!--VIIES RIDA SININE-->
+                <div style="position: relative; background-color: #E8F1FE;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol" style="background-color: #E8F1FE;">
+                    <p style="padding-top: 11px; margin: 0px;">Invoice-Waybill</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol" style="background-color: #E8F1FE;">
+                    <p style="margin: 0px; padding-top: 11px;">21.10.2022</p>
+                </div>
+                <div class="col-2 secondcol" style="background-color: #E8F1FE;">
+                    <p style="padding-top: 11px;">Dulce Lipshutz</p>
+                </div>
+                <div class="col-2 secondcol" style="background-color: #E8F1FE;">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol" style="background-color: #E8F1FE;">
+                    <label  class="label-shell" style="color: #1D2433CC; background-color: #F8F9FC; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #1D2433CC; background-color: #F8F9FC; font-size: 16px;"></i>
+                            COMPLETE
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right; background-color: #E8F1FE;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px; background-color: #E8F1FE;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+                <!--KUUES RIDA-->
+                <div style="position: relative;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px; margin: 0px;">Prepayment inv.</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="margin: 0px; padding-top: 11px;">21.10.2022</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Paityn Philips</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol">
+                    <label  class="label-shell" style="color: #3D8AF6; background-color: #E8F1FE; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #3D8AF6; background-color: #E8F1FE; font-size: 16px;"></i>
+                        IN PROGRESS
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+
+                <!--SEITSMES RIDA-->
+                <div style="position: relative; background-color: #E8F1FE;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol" style="background-color: #E8F1FE;">
+                    <p style="padding-top: 11px; margin: 0px;">Prepayment inv.</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol" style="background-color: #E8F1FE;">
+                    <p style="margin: 0px; padding-top: 11px;">21.10.2022</p>
+                </div>
+                <div class="col-2 secondcol" style="background-color: #E8F1FE;">
+                    <p style="padding-top: 11px;">Jordyn Mango</p>
+                </div>
+                <div class="col-2 secondcol" style="background-color: #E8F1FE;">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol" style="background-color: #E8F1FE;">
+                    <label  class="label-shell" style="color: #1D2433CC; background-color: #F8F9FC; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #1D2433CC; background-color: #F8F9FC; font-size: 16px;"></i>
+                            PENDING
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right; background-color: #E8F1FE;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px; background-color: #E8F1FE;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+
+                <!--KAHEKSAS RIDA-->
+                <div style="position: relative;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px; margin: 0px;">Receipt</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="margin: 0px; padding-top: 5px;">21.10.2022</p>
+                    <label  class="label-shell" style="color: #E0593E; background-color: #FFEFEC; margin: 0PX;">
+                        DUE 2 DAYS AGO
+                    </label>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Paityn Workman</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol">
+                    <label  class="label-shell" style="color: #5ABB7A; background-color: #F0FFF5; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #5ABB7A; background-color: #F0FFF5; font-size: 16px;"></i>
+                        SUCCESS
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+
+                <!--YHEKSAS RIDA-->
+                <div style="position: relative;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px; margin: 0px;">Receipt</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="margin: 0px; padding-top: 5px;">21.10.2022</p>
+                    <label  class="label-shell" style="color: #E0593E; background-color: #FFEFEC; margin: 0PX;">
+                        DUE 2 DAYS AGO
+                    </label>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Davis Dorwart</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol">
+                    <label  class="label-shell" style="color: #1D2433CC; background-color: #F8F9FC; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #1D2433CC; background-color: #F8F9FC; font-size: 16px;"></i>
+                            COMPLETE
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+
+                <!--KYMNES RIDA-->
+                <div style="position: relative;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px; margin: 0px;">Receipt</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="margin: 0px; padding-top: 11px;">21.10.2022</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Craig Workman</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol">
+                    <label  class="label-shell" style="color: #1D2433CC; background-color: #F8F9FC; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #1D2433CC; background-color: #F8F9FC; font-size: 16px;"></i>
+                            COMPLETE
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+
+                <!--KYMNES RIDA-->
+                <div style="position: relative;" class="col-1 firstcol">
+                    <input class="center checkbox" type="checkbox">
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px; margin: 0px;">Receipt</p>
+                    <p style="font-size: 10px; margin: 0px;">#100048</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="margin: 0px; padding-top: 11px;">21.10.2022</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Alfredo George</p>
+                </div>
+                <div class="col-2 secondcol">
+                    <p style="padding-top: 11px;">Location #12</p>
+                </div>
+                <div class="col-1 secondcol">
+                    <label  class="label-shell" style="color: #1D2433CC; background-color: #F8F9FC; text-align: center;">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #1D2433CC; background-color: #F8F9FC; font-size: 16px;"></i>
+                            COMPLETE
+                    </label>
+                </div>
+                <div class="col-1 secondcol" style="padding-top: 22px; text-align: right;">
+                    129.00 €
+                </div>
+                <div class="col-1 secondcol" style="text-align: center; padding-top: 22px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                      </svg>
+                </div>
+
+
+
+
+
+
+
+
+ 
+                
+            </div>
+
+        <div class="col-3 customer-panel" >
+            <div class="col-10;">
+                <p>Customers</p>
+            </div>
+            <div class="col-2" style="padding-left: 25%;">
+                <button style="font-size: 16px; background-color: #F1F3F9; height: 15px; width: 40px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                      </svg>
+                        nupp
+                </button>
+            </div>
+        </div>
+
+            
+
+
+
+    </div>
+
+
+       
+
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    </body>
+</html>
